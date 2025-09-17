@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IPB • Quick Links</title>
+  <meta name="description" content="A tiny, beautiful page with three buttons linking to Virtual, Sumários and Online portals of IPB." />
+
+  <!-- Font (modern, clean) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles: glassy card + gradient background, dark/light aware -->
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --btn-bg: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      --btn-hover: rgba(255,255,255,0.12);
+      --ring: 0 0 0 8px rgba(99, 102, 241, 0.15);
+      --brand1: #6366f1; /* indigo */
+      --brand2: #22d3ee; /* cyan */
+      --brand3: #34d399; /* green */
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc;
+        --text: #0f172a;
+        --muted: #4b5563;
+        --card: rgba(255,255,255,0.9);
+        --border: rgba(15,23,42,0.08);
+        --btn-bg: linear-gradient(180deg, rgba(15,23,42,0.06), rgba(15,23,42,0.03));
+        --btn-hover: rgba(15,23,42,0.08);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+      color: var(--text);
+      /* Subtle multicolor gradient blobs + base */
+      background:
+              radial-gradient(1200px 800px at 10% 10%, rgba(99,102,241,0.25), transparent 40%),
+              radial-gradient(1000px 700px at 90% 20%, rgba(34,211,238,0.25), transparent 35%),
+              radial-gradient(900px 600px at 50% 90%, rgba(52,211,153,0.20), transparent 30%),
+              var(--bg);
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card);
+      backdrop-filter: blur(12px) saturate(120%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .logo {
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      border-radius: 12px;
+      background: conic-gradient(from 180deg, var(--brand1), var(--brand2), var(--brand3), var(--brand1));
+    }
+    .logo svg { width: 26px; height: 26px; fill: white; opacity: .95; }
+
+    h1 { font-size: 1.6rem; line-height: 1.2; margin: 0; letter-spacing: -0.02em; }
+    p.desc { margin: 6px 0 0 0; color: var(--muted); font-size: .98rem; }
+
+    /* Grid with 3 equal buttons on >=640px, stacked on mobile */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Buttons as cards */
+    .btn {
+      display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--btn-bg);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+      will-change: transform;
+      height: 120px;
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--btn-hover); }
+    .btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .title { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+    .tag { font-size: .78rem; opacity: .9; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border); }
+    .url { color: var(--muted); font-size: .9rem; word-break: break-all; }
+
+    footer { margin-top: 18px; color: var(--muted); font-size: .86rem; text-align: center; }
+    .credit a { color: inherit; opacity: .9; }
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <section class="card" role="group" aria-label="IPB quick links">
+    <!-- Header with small brandy gradient icon and title -->
+    <header>
+      <div class="logo" aria-hidden="true">
+        <!-- link icon (inline SVG, no external deps) -->
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M10.59 13.41a1 1 0 0 0 1.41 1.41l4.24-4.24a3 3 0 0 0-4.24-4.24l-1.41 1.41a1 1 0 1 0 1.41 1.41l1.41-1.41a1 1 0 0 1 1.41 1.41l-4.24 4.24ZM13.41 10.59a1 1 0 1 0-1.41-1.41l-4.24 4.24a3 3 0 1 0 4.24 4.24l1.41-1.41a1 1 0 0 0-1.41-1.41l-1.41 1.41a1 1 0 1 1-1.41-1.41l4.24-4.24Z"/>
+        </svg>
+      </div>
+      <div>
+        <h1>IPB • Quick Links</h1>
+        <p class="desc">Three clean buttons to jump straight to the main IPB portals.</p>
+      </div>
+    </header>
+
+    <!-- Only three buttons, nothing else -->
+    <div class="grid">
+      <!-- 1) virtual.ipb.pt -->
+      <a class="btn" href="https://virtual.ipb.pt" target="_blank" rel="noopener noreferrer"
+         aria-label="Open virtual.ipb.pt in a new tab">
+        <div class="row">
+          <span class="title">Virtual </span>
+          <span class="tag">virtual.ipb.pt</span>
+        </div>
+        <span class="url">https://virtual.ipb.pt</span>
+      </a>
+
+      <!-- 2) sumarios.ipb.pt -->
+      <a class="btn" href="https://sumarios.ipb.pt" target="_blank" rel="noopener noreferrer"
+         aria-label="Open sumarios.ipb.pt in a new tab">
+        <div class="row">
+          <span class="title">Sumários</span>
+          <span class="tag">sumarios.ipb.pt</span>
+        </div>
+        <span class="url">https://sumarios.ipb.pt</span>
+      </a>
+
+      <!-- 3) online.ipb.pt -->
+      <a class="btn" href="https://online.ipb.pt" target="_blank" rel="noopener noreferrer"
+         aria-label="Open online.ipb.pt in a new tab">
+        <div class="row">
+          <span class="title">Online </span>
+          <span class="tag">online.ipb.pt</span>
+        </div>
+        <span class="url">https://online.ipb.pt</span>
+      </a>
+    </div>
+
+    <footer class="credit" aria-hidden="true">
+      Built with ♥ — no cookies, no tracking.
+    </footer>
+  </section>
+</main>
+</body>
+</html>
