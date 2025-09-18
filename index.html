@@ -4,7 +4,7 @@
   <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IPB • Quick Linksss</title>
+  <title>IPB Platforms</title>
   <meta name="description" content="A tiny, beautiful page with three buttons linking to Virtual, Sumários and Online portals of IPB." />
 
   <!-- Font (modern, clean) -->
@@ -88,6 +88,13 @@
       border-radius: 12px;
       background: conic-gradient(from 180deg, var(--brand1), var(--brand2), var(--brand3), var(--brand1));
     }
+    
+    .dance-gif {
+      width: 150px;       /* wielkość gif-a */
+      height: auto;
+      margin-bottom: 12px;
+    }
+    
     h1 {
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -122,7 +129,7 @@
       color: var(--text);
       transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
       will-change: transform;
-      height: 120px;
+      height: 100px;
     }
     .btn:hover { transform: translateY(-2px); background: var(--btn-hover); }
     .btn:focus-visible { outline: none; box-shadow: var(--ring); }
@@ -141,6 +148,9 @@
   <section class="card" role="group" aria-label="IPB quick links">
     <!-- Header with small brandy gradient icon and title -->
     <header>
+      <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2Qya3Jicm14ZGtnNHlia2F3ODNxb2NzenlndnI3MTN3ZzZ0d29uMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cztcb6ztfTfklrLMcG/giphy.gif" 
+       alt="Dancing person" 
+       class="dance-gif">
       <div class="logo" aria-hidden="true">
         <!-- link icon (inline SVG, no external deps) -->
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -148,7 +158,7 @@
         </svg>
       </div>
       <div>
-        <h1>IPB • Quick Linksss</h1>
+        <h1>IPB Platforms</h1>
         <p class="desc">Three clean buttons to jump straight to the main IPB portals.</p>
       </div>
     </header>
