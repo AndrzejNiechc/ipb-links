@@ -9,22 +9,27 @@
 
   <!-- Font (modern, clean) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles: glassy card + gradient background, dark/light aware -->
   <style>
     :root {
-      --bg: #0b0f1a;
-      --text: #e6e9ef;
-      --muted: #9aa4b2;
-      --card: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.12);
-      --btn-bg: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
-      --btn-hover: rgba(255,255,255,0.12);
-      --ring: 0 0 0 8px rgba(99, 102, 241, 0.15);
-      --brand1: #6366f1; /* indigo */
-      --brand2: #22d3ee; /* cyan */
-      --brand3: #34d399; /* green */
+          /* jasne tło jak na stronie IPB + fiolety */
+      --bg: #f1ece7;        /* beżowe tło */
+      --text: #2b1f2d;      /* ciemna śliwka dla tekstu */
+      --muted: #6d5b6f;     /* przygaszony fiolet */
+      --card: rgba(255,255,255,0.92);
+      --border: rgba(43,31,45,0.10);
+    
+      /* akcenty w odcieniach IPB */
+      --brand1: #7d2a7e;    /* główny fiolet */
+      --brand2: #b27db8;    /* jaśniejszy fiolet */
+      --brand3: #e6d6e9;    /* bardzo jasny fiolet */
+    
+      /* przyciski */
+      --btn-bg: linear-gradient(180deg, rgba(125,42,126,0.08), rgba(178,125,184,0.05));
+      --btn-hover: rgba(125,42,126,0.12);
+      --ring: 0 0 0 8px rgba(125, 42, 126, 0.18);
     }
     @media (prefers-color-scheme: light) {
       :root {
@@ -42,14 +47,14 @@
     html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Arial; 
       color: var(--text);
       /* Subtle multicolor gradient blobs + base */
       background:
-              radial-gradient(1200px 800px at 10% 10%, rgba(99,102,241,0.25), transparent 40%),
-              radial-gradient(1000px 700px at 90% 20%, rgba(34,211,238,0.25), transparent 35%),
-              radial-gradient(900px 600px at 50% 90%, rgba(52,211,153,0.20), transparent 30%),
-              var(--bg);
+        radial-gradient(900px 600px at 15% 20%, rgba(125,42,126,0.18), transparent 40%),
+        radial-gradient(700px 500px at 85% 30%, rgba(178,125,184,0.20), transparent 35%),
+        linear-gradient(#f1ece7, #f6f2ef);
+      color: var(--text);
     }
 
     .wrap {
@@ -72,16 +77,21 @@
 
     header {
       display: flex;
+      flex-direction: column;   /* było w rzędzie, ustawiamy w kolumnie */
       align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
+      text-align: center;
+    }  
 
     .logo {
       width: 44px; height: 44px;
       display: grid; place-items: center;
       border-radius: 12px;
       background: conic-gradient(from 180deg, var(--brand1), var(--brand2), var(--brand3), var(--brand1));
+    }
+    h1 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
     }
     .logo svg { width: 26px; height: 26px; fill: white; opacity: .95; }
 
@@ -143,32 +153,17 @@
     <div class="grid">
       <!-- 1) virtual.ipb.pt -->
       <a class="btn" href="https://virtual.ipb.pt" target="_blank" rel="noopener noreferrer"
-         aria-label="Open virtual.ipb.pt in a new tab">
-        <div class="row">
           <span class="title">Virtual </span>
-          <span class="tag">virtual.ipb.pt</span>
-        </div>
-        <span class="url">https://virtual.ipb.pt</span>
       </a>
 
       <!-- 2) sumarios.ipb.pt -->
       <a class="btn" href="https://sumarios.ipb.pt" target="_blank" rel="noopener noreferrer"
-         aria-label="Open sumarios.ipb.pt in a new tab">
-        <div class="row">
           <span class="title">Sumários</span>
-          <span class="tag">sumarios.ipb.pt</span>
-        </div>
-        <span class="url">https://sumarios.ipb.pt</span>
       </a>
 
       <!-- 3) online.ipb.pt -->
       <a class="btn" href="https://online.ipb.pt" target="_blank" rel="noopener noreferrer"
-         aria-label="Open online.ipb.pt in a new tab">
-        <div class="row">
           <span class="title">Online </span>
-          <span class="tag">online.ipb.pt</span>
-        </div>
-        <span class="url">https://online.ipb.pt</span>
       </a>
     </div>
 
