@@ -33,14 +33,21 @@
     }
     @media (prefers-color-scheme: light) {
       :root {
-        --bg: #f7fafc;
-        --text: #0f172a;
-        --muted: #4b5563;
-        --card: rgba(255,255,255,0.9);
-        --border: rgba(15,23,42,0.08);
-        --btn-bg: linear-gradient(180deg, rgba(15,23,42,0.06), rgba(15,23,42,0.03));
-        --btn-hover: rgba(15,23,42,0.08);
+        --bg: #efe7df;        /* ciemniejszy beż (bardziej kontrastowy niż #f1ece7) */
+        --text: #1e0f1f;      /* mocniejsza, ciemniejsza śliwka */
+        --muted: #4a364d;     /* ciemniejszy fiolet dla tekstów pobocznych */
+        --card: rgba(255,255,255,0.95);
+        --border: rgba(43,31,45,0.20);
+      
+        --brand1: #6a0dad;    /* intensywny fiolet (zamiast 7d2a7e) */
+        --brand2: #9c27b0;    /* żywy fiolet-magenta */
+        --brand3: #d8a2e4;    /* jasny, ale wyraźny pastelowy fiolet */
+      
+        --btn-bg: linear-gradient(180deg, rgba(106,13,173,0.12), rgba(156,39,176,0.08));
+        --btn-hover: rgba(106,13,173,0.16);
+        --ring: 0 0 0 8px rgba(106,13,173,0.25);
       }
+
     }
 
     * { box-sizing: border-box; }
@@ -51,9 +58,9 @@
       color: var(--text);
       /* Subtle multicolor gradient blobs + base */
       background:
-        radial-gradient(900px 600px at 15% 20%, rgba(125,42,126,0.18), transparent 40%),
-        radial-gradient(700px 500px at 85% 30%, rgba(178,125,184,0.20), transparent 35%),
-        linear-gradient(#f1ece7, #f6f2ef);
+        radial-gradient(900px 600px at 15% 20%, rgba(106,13,173,0.25), transparent 40%),
+        radial-gradient(700px 500px at 85% 30%, rgba(156,39,176,0.30), transparent 35%),
+        linear-gradient(#efe7df, #f8f4f1);
       color: var(--text);
     }
 
@@ -90,7 +97,7 @@
     }
     
     .dance-gif {
-      width: 200px;       /* wielkość gif-a */
+      width: 100px;       /* wielkość gif-a */
       height: auto;
       margin-bottom: 20px;
     }
@@ -130,8 +137,12 @@
       transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
       will-change: transform;
       height: 50px;
+      box-shadow: 0 4px 12px rgba(106,13,173,0.15);
     }
-    .btn:hover { transform: translateY(-2px); background: var(--btn-hover); }
+    .btn:hover { 
+      background: rgba(156,39,176,0.18);
+      transform: translateY(-3px); 
+    }
     .btn:focus-visible { outline: none; box-shadow: var(--ring); }
 
     .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
